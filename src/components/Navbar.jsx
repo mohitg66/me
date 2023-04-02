@@ -28,11 +28,11 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div ref={navRef} className='absolute w-full bg-gradient-to-b from-slate-950 to-transparent z-1 flex flex-row justify-between items-center px-16 py-7 md:py-4'>
+      <div ref={navRef} className='absolute w-full bg-gradient-to-b from-slate-950 to-transparent z-1 flex flex-row justify-between items-center px-16 py-4'>
         <div className="flex flex-row items-center justify-start">
             {/* link to homepage by logo */}
             <Link to='/'>
-                <img className="h-8 scale-[2]" src={logo} alt="mg" />
+                <img className="h-8 scale-[2] my-4" src={logo} alt="mg" />
             </Link>
             <h1 className="font-mono font-semibold text-xl px-10">
                 Mohit
@@ -45,7 +45,9 @@ const Navbar = () => {
                 <li 
                     className="px-4 py-4 font-light text-lg hover:font-normal" key={link.name}
                 >
+                  <Link to={link.name}>
                     <a href='#' onClick={(e) => scrollToSection(e, link.name)}>{link.name}</a>
+                  </Link>
                 </li>
             ))}
           </ul>

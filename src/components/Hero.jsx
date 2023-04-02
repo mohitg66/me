@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import photo from "../assets/photo.png";
 
 const Hero = () => {
   const [jobTitle, setJobTitle] = useState("Designer");
@@ -49,7 +50,7 @@ const Hero = () => {
         </div>
   
         <div className="w-1/3">
-          <img className="absolute right-0 bottom-0 origin-bottom -mr-6 md:mr-14 lg:mr-16 scale-75 md:scale-100 lg:scale-110 h-3/4" src="src\assets\photo.png" alt="photo" />
+          <img className="absolute right-0 bottom-0 origin-bottom -mr-6 md:mr-14 lg:mr-16 scale-75 md:scale-100 lg:scale-110 h-3/4" src={photo} alt="photo" />
         </div>
       </div>
     </div>
