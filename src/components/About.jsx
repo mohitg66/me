@@ -20,7 +20,7 @@ const overview = {
     {
       title: "UI/UX Design",
       description:
-        "I have a keen eye for design and am proficient in tools like Figma and Adobe Illustrator. I understand the importance of creating user-friendly interfaces.",
+        "I have a keen eye for design and am proficient in tools like Figma and Adobe Illustrator. I understand the importance of creating user-friendly interfaces for users.",
     },
   ],
 };
@@ -35,11 +35,11 @@ const About = () => {
       <h2 className="font-semibold text-6xl mb-6">Overview</h2>
       <p className="font-sans mb-10">{overview.description}</p>
 
-      <div className="flex flex-row justify-between gap-6 box-border max-w-screen-md">
+      <div className="flex flex-row flex-wrap md:flex-nowrap justify-between gap-6 gap-y-10 box-border max-w-screen-md">
         {overview.expertise.map((element) => {
           return (
             <Tilt
-              className="bg-gradient-to-tr from-slate-900 to-slate-700 p-1 rounded-lg shadow-xl w-1/3"
+              className="bg-gradient-to-br from-indigo-800 to-cyan-100 p-1 rounded-lg shadow-md shadow-slate-900 md:w-1/3"
             //   options={{
             //     // max: 25,
             //     // perspective: 1000,
@@ -47,7 +47,7 @@ const About = () => {
             //   }}
             >
               <motion.div
-                className="flex flex-col justify-center items-center h-full w-full p-4 py-6  bg-blue rounded-xl shadow shadow-slate-600 box-border"
+                className="flex flex-col justify-center items-center h-full w-full p-4 py-6  bg-my-blue rounded-lg box-border"
                 whileHover={{
                 //   scale: 1.1,
                 //   transition: { duration: 0.2 },

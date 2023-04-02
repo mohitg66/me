@@ -18,23 +18,23 @@ const projects=[
                 "https://cdn-icons-png.flaticon.com/128/732/732190.png",
                 "https://cdn.svgporn.com/logos/javascript.svg",
                 "https://cdn.svgporn.com/logos/tailwindcss-icon.svg",
-                "https://cdn.svgporn.com/logos/github-octocat.svg"
+                "https://cdn-icons-png.flaticon.com/128/5968/5968866.png"
             ]
     },
     {
         name: "Basic Linux Shell",
-        description: "A basic linux shell designed and developed using standard C libraries and linux system calls such as fork() & system().",
+        description: "A basic linux shell, designed and developed using standard C libraries and linux system calls such as fork() & system()",
         image: shell,
         link: "https://github.com/mohitg66/Basic-Linux-Shell",
         tech: ["https://cdn.svgporn.com/logos/c.svg",
                "https://cdn.svgporn.com/logos/linux-tux.svg",
-               "https://cdn.svgporn.com/logos/github-octocat.svg",
+               "https://cdn-icons-png.flaticon.com/128/5968/5968866.png",
                "https://cdn.svgporn.com/logos/git-icon.svg"
             ]
     },
     {
         name: "Tank Stars",
-        description: "A clone of the popular game Tank Stars, developed using popular Java development framework libGDX by using the concepts of OOPs.",
+        description: "A clone of the popular game Tank Stars, developed using popular Java development framework libGDX by using OOPs",
         image: tankStars,
         link: "https://github.com/mohitg66/Tank-Stars",
         tech: ["https://cdn.svgporn.com/logos/java.svg",
@@ -44,15 +44,6 @@ const projects=[
 ]
 
 const Projects = () => {
-//     const [selectedProject, setSelectedProject] = useState(null);
-
-//     const handleOpenModal = (project) => {
-//         setSelectedProject(project);
-//     }
-
-//     const handleCloseModal = () => {
-//         setSelectedProject(null);
-//     }
 
     return (
         <div id="Projects" className="relative min-h-screen bg-gradient-to-t from-dark-blue to-darker-blue px-14 py-14">
@@ -60,10 +51,11 @@ const Projects = () => {
             <h2 className="font-semibold text-6xl mb-6">Projects</h2>
             <p className="font-sans mb-10">{description}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-md">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-10 max-w-screen-md">
                 {projects.map((project) => (
+                    <a href={project.link} target="_blank">
                     <motion.div
-                        className="bg-darkest-blue rounded-lg overflow-hidden cursor-pointer shadow-lg shadow-slate-700"
+                        className="bg-dark-blue rounded-lg overflow-hidden cursor-pointer shadow-lg shadow-slate-700"
                         key={project.name}
                         onClick={() => handleOpenModal(project)}
                         whileHover={{ scale: 1.05 }}
@@ -81,16 +73,10 @@ const Projects = () => {
                             </div>
                         </div>
                     </motion.div>
+                    </a>
                 ))}
             </div>
 
-            {/* {selectedProject && (
-                <Modal
-                    isOpen={true}
-                    onClose={handleCloseModal}
-                    project={selectedProject.link}
-                />
-            )} */}
         </div>    
     );
 }
