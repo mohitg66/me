@@ -72,7 +72,7 @@ const Contact = () => {
           </div>
           {!isSubmitted && (
             <button
-              className="bg-blue-700 text-gray-100 font-sans font-medium py-2 px-4 rounded transition duration-100 delay-100 hover:bg-blue-600 hover:scale-105 active:scale-95 focus:text-gray-200 focus:opacity-70 focus:outline-none focus:shadow-inner"
+              className="bg-light-blue text-gray-100 font-sans font-medium py-2 px-4 rounded transition duration-100 delay-100 hover:bg-indigo-950 hover:scale-105 active:scale-95 focus:text-gray-200 focus:opacity-70 focus:outline-none focus:shadow-inner"
               type="submit"
             >
               Send Message
