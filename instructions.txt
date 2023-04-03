@@ -1,0 +1,32 @@
+To deploy a Vite project of React and Tailwind CSS on GitHub pages, you can follow these steps:
+
+Build the project: Run the following command in the terminal to create a production-ready build of the project.
+
+arduino
+npm run build
+Install gh-pages: Run the following command to install gh-pages package that will be used to deploy the project.
+
+css
+npm install gh-pages --save-dev
+Add homepage to package.json: Open the package.json file and add the homepage URL to it.
+
+json
+"homepage": "https://<username>.github.io/<repo-name>/"
+Add deploy script: Add the following script to the scripts section in package.json file.
+
+json
+"deploy": "gh-pages -d dist"
+Commit and push: Commit the changes and push the code to GitHub.
+
+sql
+git add .
+git commit -m "Added homepage and deploy script"
+git push
+Deploy the project: Finally, run the following command in the terminal to deploy the project.
+
+arduino
+npm run deploy
+Once the deployment process is completed, your project will be live on the specified homepage URL.
+
+
+

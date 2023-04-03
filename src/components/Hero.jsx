@@ -33,10 +33,10 @@ const Hero = () => {
       <Navbar />
       <div className="flex flex-row justify-center items-center h-full">
         <div className="flex flex-col flex-wrap w-2/3 justify-center items-start pl-12 pr-24">
-          <div className="font-roboto font-medium text-xl text-gray-400 pl-1">
+          <div className="font-roboto font-medium text-xl text-gray-400 pl-1 cursor-default">
             Hello!
           </div>
-          <div className="mt-2 font-normal text-6xl text-white">
+          <div contentEditable="true" className="mt-2 font-normal text-6xl text-white outline-0">
             I'm a&nbsp;
             <span className="font-bold">
                 {jobTitle}
@@ -44,7 +44,7 @@ const Hero = () => {
             <span>|</span>
           </div>
 
-          <p className="mt-4">
+          <p className="mt-4 cursor-default">
           I am a student of computer science and design with experience in front-end development, data structures, and algorithms. I have a passion for creating visually appealing and interactive web experiences. 
           </p>
         </div>
