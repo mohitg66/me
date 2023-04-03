@@ -8,7 +8,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -17,6 +16,7 @@
     "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.3",
     "react-markdown": "^8.0.6",
     "react-router-dom": "^6.10.0",
     "react-tilt": "^1.0.2"

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 // import Modal from "./Modal";
 import homepage from "../assets/homepage.png";
@@ -44,6 +45,10 @@ const projects=[
 ]
 
 const Projects = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+      });
 
     return (
         <div id="Projects" className="relative min-h-screen bg-gradient-to-t from-dark-blue to-darker-blue px-14 py-14">
@@ -51,34 +56,35 @@ const Projects = () => {
             <h2 className="font-semibold text-6xl mb-6">Projects</h2>
             <p className="font-sans mb-10">{description}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-10 max-w-screen-md">
-                {projects.map((project) => (
-                    <a href={project.link} target="_blank">
-                    <motion.div
-                        className="bg-dark-blue rounded-lg overflow-hidden cursor-pointer shadow-lg shadow-slate-700"
-                        key={project.name}
-                        onClick={() => handleOpenModal(project)}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <img src={project.image} alt={project.name} className="w-full object-cover" />
-                        <div className="p-4">
-                            <h3 className="font-semibold text-lg mb-2">{project.name}</h3>
-                            <p className="text-gray-300 text-sm">{project.description}</p>
-
-                            <div className="flex gap-2 mt-4">
-                                {project.tech.map((tech) => (
-                                    <img className="h-4" src={tech} alt="tech" />
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
-                    </a>
-                ))}
+            <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-10 max-w-screen-md">
+              {projects.map((project, index) => (
+                <a href={project.link} target="_blank" key={project.name}>
+                  <motion.div
+                    className="bg-dark-blue rounded-lg overflow-hidden cursor-pointer shadow-lg shadow-slate-700"
+                    onClick={() => handleOpenModal(project)}
+                    initial={{ opacity: 0, x: '100%' }}
+                    animate={inView ? { opacity: 1, x: '0%' } : {}}
+                    transition={{ duration: 1, delay: index * 0.35 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <img src={project.image} alt={project.name} className="w-full object-cover" />
+                    <div className="p-4">
+                      <h3 className="font-semibold text-lg mb-2">{project.name}</h3>
+                      <p className="text-gray-300 text-sm">{project.description}</p>
+            
+                      <div className="flex gap-2 mt-4">
+                        {project.tech.map((tech, index) => (
+                          <img key={index} className="h-4" src={tech} alt="tech" />
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                </a>
+              ))}
             </div>
-
-        </div>    
-    );
+        </div>
+      );
 }
 
 export default Projects;
