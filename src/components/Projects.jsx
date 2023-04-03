@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 // import Modal from "./Modal";
 import homepage from "../assets/homepage.png";
 import shell from "../assets/shell.png";
@@ -63,10 +63,10 @@ const Projects = () => {
                     className="bg-dark-blue rounded-lg overflow-hidden cursor-pointer shadow-lg shadow-slate-700"
                     onClick={() => handleOpenModal(project)}
                     initial={{ opacity: 0, x: '100%' }}
-                    animate={inView ? { opacity: 1, x: '0%' } : {}}
-                    transition={{ duration: 1, delay: index * 0.35 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    animate={inView ? { opacity: 1, x: '0%', transition: {duration: 1, delay: index* 0.2} } : {}}
+                    // transition={{ duration: 0.5, delay: index * 0.2 }}
+                    whileHover={{ scale: 1.05, transition: { duration: 0.2, delay: 0.2 } }}
+                    whileTap={{ scale: 0.95, transition: { duration: 0.2 }  }}
                   >
                     <img src={project.image} alt={project.name} className="w-full object-cover" />
                     <div className="p-4">
