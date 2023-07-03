@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const overview = {
   title: "Overview",
   description:
-    "I am a computer science student at IIITD. My passion for coding and problem-solving has led me to develop expertise in object-oriented programming, data structures, algorithms, and front-end development. I am proficient in Java, C, Python, and JavaScript, and have hands-on experience in tools like Git, HTML, CSS, Tailwind CSS, Figma, and Adobe Illustrator. Throughout my academic journey, I have undertaken challenging projects that have allowed me to apply my theoretical knowledge to real-world problems.",
+    "I am a computer science student at IIITD. My passion for coding and problem-solving has led me to develop expertise in object-oriented programming, data structures, algorithms, and front-end development. I am proficient in C++, Java, C, Python, and JavaScript, and have hands-on experience in tools like Git, HTML, CSS, Tailwind CSS, Figma, and Adobe Illustrator. Throughout my academic journey, I have undertaken challenging projects that have allowed me to apply my theoretical knowledge to real-world problems.",
   expertise: [
     {
       title: "Software Development",
